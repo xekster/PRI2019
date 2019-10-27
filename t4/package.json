@@ -1,0 +1,12 @@
+{
+  "name": "pri2019t4",
+  "version": "1.0.0",
+  "description": "Servidor para websites de musicas",
+  "main": "musica.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node musica.js"
+  },
+  "author": "a78914",
+  "license": "ISC"
+}

@@ -1,0 +1,32 @@
+extends layout
+block content
+    .w3-container
+        .w3-card-4
+            header.w3-container.w3-teal
+                h3 Novo aluno
+            .w3-container
+                form.w3-container(action='/alunos' method='POST')
+                    label
+                        b Nome
+                    input.w3-input.w3-border.w3-light-grey(type='text' name='nome')
+                    label 
+                        b Curso
+                    input.w3-input.w3-border.w3-light-grey(type='text' name='curso')
+                    input.w3-btn.w3-blue-grey(type='submit' value='Enviar')
+        .w3-card-4
+            table.w3-table-all
+                tr
+                    th Nome
+                    th Curso
+                    th Id
+                    th Operações
+                each i in lista
+                    tr
+                        td= i.nome
+                        td= i.curso
+                        td= i.id
+                        td 
+                            button.w3-button.w3-circle.w3-blue-grey(onclick="apagaItem('" + i.id + "')") Apagar
+        footer.w3-container.w3-teal
+            address Gerado por Lista de Compras App::
+                

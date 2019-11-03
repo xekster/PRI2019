@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/home/xekster/PRI/aula4/PRI2019-A78914-T3/PR.dtd">
+<pr>
+    <meta>
+        <keyname>PRI2019-A78914-T4</keyname>
+        <title>Servidor em node.js gerado com Express</title>
+        <bdate>28-10-2019</bdate>
+        <edate>4-11-2019</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www.di.uminho.pt/~jcr</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>a78914</identifier>
+            <name>Ricardo Rodrigues Martins</name>
+            <email>a78914@alunos.uminho.pt</email>
+            <photo path="ricardo.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p> Esta entrega consiste num pequeno servidor em <b>node.js</b> gerado com ajuda de <b>Express</b> que tem como objetivo mostrar páginas <i>web</i> geradas através de 
+            ficheiros <b>pug</b>, que em conjunto são interpretadas pelo <i>browser</i> de modo a criar o <b>html</b> da página. Estas páginas são alimentadas por modelos de dados
+            guardados em ficheiros <b>.json</b> e permitem também através de diversos métodos <b>http</b> como POST e DELETE pedir alterações à base de dados do servidor.
+        </p>
+    </abstract>
+    <deliverables>
+        <deliverable path="pr.xml">pr.xml</deliverable>
+        <deliverable path="routes/index.js">index.js</deliverable>
+        <deliverable path="views/index.pug">index.pug</deliverable>
+        <deliverable path="views/single.pug">single.pug</deliverable>
+        <deliverable path="public/javascripts/apagar.js">apagar.js</deliverable>
+    </deliverables>
+</pr>

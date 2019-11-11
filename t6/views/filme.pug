@@ -1,0 +1,20 @@
+extends layout
+block content
+    .w3-container
+        .w3-card-4
+            table.w3-table-all
+                tr
+                    th Id
+                    th Nome
+                    th Ano
+                    th Elenco
+                    th Generos
+                    tr
+                        td= mate._id
+                        td= mate.title
+                        td= mate.year
+                        td= mate.cast
+                        td= mate.genres
+
+        footer.w3-container.w3-teal
+            address Gerado por Filmes App.

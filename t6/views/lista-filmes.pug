@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .w3-container
+        h1 Lista de Filmes
+        table.w3-table-all
+            tr
+                th Identificador
+                th Nome
+                th Ano
+            each filme in lista
+                tr
+                    td= filme._id
+                    td= filme.title
+                    td= filme.year

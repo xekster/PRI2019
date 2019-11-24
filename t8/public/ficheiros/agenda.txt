@@ -1,0 +1,21 @@
+Agenda
+
+(a)Seleccione todas as entradas de Braga (indicativo 253).
+
+//entrada[starts-with(./telefone,"253")]
+
+(b)Seleccione todas as entradas que não são de Braga.
+
+//entrada [not(starts-with(./telefone,"253"))]
+
+(c)Seleccione todas as entradas de pessoas com nome contendo "José" ou "Maria".
+
+//entrada[contains(./nome, "José") or contains(./nome, "Maria")]
+
+(d)Seleccione os identificadores das entradas pertencentes a grupos.
+
+//grupo/entrada/@id
+
+(e)Seleccione os identificadores das entradas que não são do tipo "pessoa". 
+
+//entrada[not(@tipo="pessoa")]/@id

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/home/xekster/PRI/aula4/PRI2019-A78914-T3/PR.dtd">
+<pr>
+    <meta>
+        <keyname>PRI2019-A78914-T7</keyname>
+        <title>Servidor API em node.js com Base de Dados em Mongo</title>
+        <bdate>11-11-2019</bdate>
+        <edate>-18-2019</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www.di.uminho.pt/~jcr</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>a78914</identifier>
+            <name>Ricardo Rodrigues Martins</name>
+            <email>a78914@alunos.uminho.pt</email>
+            <photo path="ricardo.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p> Esta entrega consiste num pequeno servidor em <b>node.js</b> gerado com ajuda de <b>Express</b> que tem como objetivo servir uma <i>API</i> de dados.
+            Esta <i>API</i> fornece métodos para alterar e aceder a informação do servidor guardada numa base de dados em <b>Mongodb</b> através de métodos <b>http</b> como POST e GET.
+        </p>
+    </abstract>
+    <deliverables>
+        <deliverable path="pr.xml">pr.xml</deliverable>
+        <deliverable path="routes/apiC.js">apiC.js</deliverable>
+        <deliverable path="routes/apiO.js">apiO.js</deliverable>
+        <deliverable path="app.js">app.js</deliverable>
+    </deliverables>
+</pr>

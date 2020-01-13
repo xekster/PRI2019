@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/home/xekster/PRI/aula4/PRI2019-A78914-T3/PR.dtd">
+<pr>
+    <meta>
+        <keyname>PRI2019::teste::A78914</keyname>
+        <title>Teste de PRI</title>
+        <bdate>13-01-2020</bdate>
+        <edate>13-01-2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www.di.uminho.pt/~jcr</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>a78914</identifier>
+            <name>Ricardo Rodrigues Martins</name>
+            <email>a78914@alunos.uminho.pt</email>
+            <photo path="ricardo.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>
+            No primeiro ponto, o primeiro passo foi formatar o dataset. Isto foi feito com o comando <i>replace</i> do
+            <b>Visual Studio Code</b>, onde foram corrigidos os erros de formatação do dataset. Depois disto, o ficheiro <b>.json</b>
+            resultante foi importado para o <b>Mongodb</b> com o comando <i>mongoimport -c pubs -d pubs --jsonArray jcrpubs.json</i>.
+            Depois de instalados os módulos do <b>Nodejs</b> com o comando <i>npm i</i>, o servidor pode ser inicializado com <i>npm start</i>,
+            que coloca o servidor da API à escuta na porta 3004.
+        </p>
+        <p>
+            No segundo ponto, foi utilizado o <b>Postman</b> para responder às questões colocadas, e o output foi analisado com 
+            a ajuda do <b>Visual Studio Code</b> e do comando <i>find</i>. Depois disto, foi desenvolvida um servidor em <b>Nodejs</b>
+            com o objetivo de responder aos requisitos colocados. Este utiliza o <b>Axios</b> para enviar pedidos à API do <i>CLAV</i>, 
+            e mostra os dados obtidos numa interface fácil de navegar. Depois de instalados os módulos do <b>Nodejs</b> com o comando <i>npm i</i>,
+            o servidor pode ser inicializado com <i>npm start</i>, que coloca o servidor da API à escuta na porta 5026.
+        </p>
+    </abstract>
+    <deliverables>
+        <deliverable path="PR.xml">PR.xml</deliverable>
+        <deliverable path="ex1/">Servidor API do exercício 1</deliverable>
+        <deliverable path="ex2/ex2Answers.txt">Respostas ao exercício 2</deliverable>
+        <deliverable path="ex2/">Servidor de interface do exercício 2</deliverable>
+    </deliverables>
+</pr>

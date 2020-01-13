@@ -1,0 +1,6 @@
+1- Estão catalogadas 76 tipologias.
+2- Pertencem à tipologia tip_FSS 5 entidades.
+3- A tipologia tip_FA participa como comunicador nos processos "Concessão de pensões de preço de sangue",
+   "Concessão de pensões por serviços excecionais e relevantes prestados ao país", "Concessão de pensões 
+   de ex-prisioneiro de guerra", e "Concessão de pensões por condecorações"
+4- A entidade ent_SEF pertence às tipologias "Administração Pública" e "Forças e serviços de segurança".

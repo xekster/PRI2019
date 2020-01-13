@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .w3-container.w3-light-gray
+        h1 Clav
+        w3.container
+            h3 Lista de Topologias
+            table.w3-table-all
+                tr
+                    th Designação
+                    th Sigla
+                    th Estado
+                    th Id
+                each tipologia in lista
+                    tr
+                        td= tipologia.designacao
+                        td= tipologia.sigla
+                        td= tipologia.estado
+                        td= tipologia.id
+                        td
+                            a(href="http://localhost:5026/tipo/"+tipologia.id) Visitar

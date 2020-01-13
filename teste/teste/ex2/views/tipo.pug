@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    .w3-container.w3-light-gray
+        h1= lista.designacao
+        p= "Sigla: " + lista.sigla
+        p= "Estado: " + lista.estado
+    w3.container
+        h3 Lista de Entidades
+        table.w3-table-all
+            tr
+                th Designação
+                th Sigla
+                th Id
+            each ent in elem
+                tr
+                    td= ent.designacao
+                    td= ent.sigla
+                    td= ent.estado
+    w3.container
+        h3 Processos de que é dono
+        table.w3-table-all
+            tr
+                th Codigo
+                th Titulo
+                th Id
+            each a in dono
+                tr
+                    td= a.codigo
+                    td= a.titulo
+                    td= a.id
+
+    w3.container
+        h3 Processos em que participa
+        table.w3-table-all
+            tr
+                th Tipo
+                th Codigo
+                th Titulo
+                th Id
+            each b in part
+                tr
+                    td= b.tipoPar
+                    td= b.codigo
+                    td= b.titulo
+                    td= b.id
+
+    a(href="http://localhost:5026/") Página Inicial

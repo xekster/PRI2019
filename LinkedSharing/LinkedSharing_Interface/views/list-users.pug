@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  .w3-container.w3-blue-grey
+    h1
+      b
+        i 
+          a(href="http://localhost:3005/")
+            button.w3-button.w3-blue-grey Linked Sharing
+    p
+      h1 List of Users
+  .w3-container
+    table.w3-table.w3-border.w3-light-grey
+      tr
+        th Name
+        th University
+        th Year
+        th Degree
+        th Estado
+      each elem in users
+        if(elem.nome != "Admin")
+          tr
+            td
+              a(href="http://localhost:3005/profile/" + elem.email)
+                button.w3-button.w3-blue-grey= elem.nome
+            td= elem.universidade
+            td= elem.ano
+            td= elem.curso
+            td
+              #user
+                if( elem.amigos.indexOf(user) > -1 )
+                  a(href="http://localhost:3005/remove/" + elem.email)
+                    button.w3-button.w3-blue-grey Remove friend
+                else if (elem.email == user)
+                else
+                  a(href="http://localhost:3005/add/" + elem.email)
+                    button.w3-button.w3-blue-grey Add friend

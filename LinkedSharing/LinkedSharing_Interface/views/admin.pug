@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .w3-container.w3-blue-grey
+    h1
+      b
+        i 
+          a(href="http://localhost:3005/")
+            button.w3-button.w3-blue-grey Linked Sharing
+  .w3-container.w3-blue-grey
+    h2
+      b Administrator's Page
+  table.w3-table
+    tr
+      td
+        .w3-container
+          h3 
+            b= "Users"
+          table.w3-table
+            each elem in users
+              #user
+                if(elem.nome != 'Admin')
+                  tr
+                    td= elem.nome
+                    td= elem.email
+                    td= elem.universidade
+                    td= elem.ano
+                    td= elem.curso
+      td
+        .w3-container
+          h3
+            b= "Number of users in total: " + (users.length - 1)
+          h3  
+            b= "Number of posts in total: " + posts.length
+        .w3-container
+          form.w3-container(action="/register/import" method="post" enctype="multipart/form-data")
+            label.w3-cell Import to Database:
+            input.w3-input.w3-cell(type="file" name="ficheiro")
+            input.w3-input(type="submit" value="Import")
+        .w3-container.w3-padding
+          a(href="http://localhost:3005/logout")
+            button.w3-button.w3-blue-grey Logout
+        .w3-container.w3-padding
+          a(href="http://localhost:3005/register/export")
+            button.w3-button.w3-blue-grey Export Data

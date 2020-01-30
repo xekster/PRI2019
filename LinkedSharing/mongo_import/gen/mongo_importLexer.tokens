@@ -1,0 +1,6 @@
+COMMA=1
+MUDALINHA=2
+TUDO=3
+WS=4
+','=1
+'\n'=2

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .w3-container.w3-blue-grey.w3-padding
+    h1
+      b
+        i 
+          a(href="http://localhost:3005/linkedsharing/")
+            button.w3-button.w3-blue-grey Linked Sharing
+    p Submit all of your information here
+    form.w3-container(action="/register" method="post")
+      label Email:
+      input.w3-input(type="text" name="email")
+      label Password:
+      input.w3-input(type="password" name="password")
+      label Name:
+      input.w3-input(type="text" name="nome")
+      label University:
+      input.w3-input(type="text" name="universidade")
+      label Year:
+      input.w3-input(type="text" name="ano")
+      label Degree:
+      input.w3-input(type="text" name="curso")
+      input.w3-input.w3-light-grey(type="submit" value="Register")
+    form.w3-container(action="/register/form" method="post" enctype="multipart/form-data")
+      label.w3-cell User as a File:
+      input.w3-input.w3-cell(type="file" name="ficheiro")
+      input.w3-input(type="submit" value="Register With File")

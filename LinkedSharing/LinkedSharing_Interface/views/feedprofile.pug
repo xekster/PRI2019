@@ -1,0 +1,81 @@
+extends layout
+
+block content
+  table.w3-table-all
+    tr
+      td
+        h1
+            b
+              i 
+                a(href="http://localhost:3005/")
+                  button.w3-button.w3-blue-grey Linked Sharing
+        h1
+          b= user.nome + "'s Profile"
+        each elem in posts     
+          #user
+          if(elem.criador == user.email)
+            .w3-container.w3-border.w3-padding-16
+            - var time = elem.dataCriacao.split(' ')[0] + ' at ' + elem.dataCriacao.split(' ')[1]
+            p
+              b= 'Posted at ' + time
+            p= 'Created by ' + elem.criador
+            p
+              b Classifier
+            a(href="http://localhost:3005/pubs/classifier/" + elem.classificador)
+                button.w3-button.w3-light-grey= elem.classificador
+            #user
+              if elem.tipo == "Event"
+                - var time2 = elem.dataRealizar.split(' ')[0] + ' at ' + elem.dataRealizar.split(' ')[1]
+                p
+                  b=elem.titulo
+                p= 'Will occur at ' + time2 
+            p=elem.texto
+            .w3-container.w3-light-grey
+              p
+                b Files Avaliables
+              #user
+                if elem.ficheiros.length > 0
+                  each elem2 in elem.ficheiros
+                    a(href="http://localhost:3005/file/" + elem2.filename)
+                      button.w3-button.w3-light-grey= elem2.name
+                else
+                  p There's no files uploaded
+            .w3-container.w3-light-grey
+              p 
+                b Comments
+              #user
+                if elem.comentarios.length > 0
+                  each elem2 in elem.comentarios
+                    p= elem2.criador + ' : ' + elem2.texto
+                else
+                  p No comments for now
+              form.w3-container(action="/pubs/comment/" + elem._id method="post")
+                label Text:
+                input.w3-input(type="text" name="texto")
+                input.w3-input(type="submit" value="Comment")
+      td
+        .w3-container.w3-blue-grey.w3-padding-16
+          h1 
+            b Profile
+          p= 'Name:' + user.nome
+          p= 'University:' + user.universidade
+          p= 'Year:' + user.ano
+          p= 'Degree:' + user.curso
+          h1
+            b Friends
+          each elem in friends
+            p
+              a(href="http://localhost:3005/profile/" + elem.email)
+                button.w3-button.w3-blue-gray=elem.nome
+        .w3-container.w3-border.w3-light-grey
+          h2
+            b Classifiers
+          table.w3-table-all.w3-border-0
+            each elem in clas
+              tr.w3-light-grey
+                td 
+                  a(href="http://localhost:3005/pubs/classifier/" + elem)
+                    button.w3-button.w3-blue-gray= elem
+        
+          
+

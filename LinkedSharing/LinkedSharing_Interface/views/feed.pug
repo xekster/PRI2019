@@ -1,0 +1,152 @@
+extends layout
+
+block content
+  table.w3-table-all
+    tr
+      td
+        .w3-container.w3-blue-grey
+          h1
+            b
+              i 
+                a(href="http://localhost:3005/")
+                  button.w3-button.w3-blue-grey Linked Sharing
+          h2
+            b See all the users
+          p
+            a(href="http://localhost:3005/listusers")
+              button.w3-button.w3-blue-grey List of Users
+          h2
+            b See what you want
+          a(href="http://localhost:3005/pubs/posts")
+            button.w3-button Posts
+          a(href="http://localhost:3005/pubs/events")
+            button.w3-button Events
+        .w3-container.w3-blue-grey
+          h2
+            b Choose a type of post you want
+          button.w3-button(id='post') New Post
+          button.w3-button(id='event') New Event
+          div(class='form-post' style="display:none;")
+            h1 New Post
+            form.w3-container(action="/pubs/post" method="post" enctype="multipart/form-data")
+              .w3-container
+                label Classifier:
+                input.w3-input(type="text" name="classificador")
+                label Text:
+                input.w3-input(type="text" name="texto")
+              .w3-container(id='list')
+                .w3-container(id='f1')  
+                  label.w3-cell File:
+                  input.w3-input.w3-cell(type="file" name="ficheiro")
+              .w3-container
+                button.w3-button.w3-light-grey(id='mais1') +1
+              input.w3-input.w3-blue-grey(type="submit" value="Post")
+          div(class='form-event' style="display:none;")
+            h1 New Event
+            form.w3-container(action="/pubs/event" method="post" enctype="multipart/form-data")
+              .w3-container
+                label Classifier:
+                input.w3-input(type="text" name="classificador")
+                label Title:
+                input.w3-input(type="text" name="titulo")
+                label Text:
+                input.w3-input(type="text" name="texto")
+                label Date of the Event
+                input.w3-input(type="date" name="date")
+                label Time of the Event
+                input.w3-input(type="time" name="time")
+              .w3-container(id='list1')
+                .w3-container(id='ff1')
+                  label.w3-cell File:
+                  input.w3-input.w3-cell(type="file" name="ficheiro")
+              .w3-container
+                button.w3-button.w3-light-grey(id='maiss1') +1
+              input.w3-input.w3-blue-grey(type="submit" value="Post")
+        h1
+          b Feed
+        each elem in posts
+          #user
+            if(user.amigos.indexOf(elem.criador) > -1 || elem.criador == user.email)
+              .w3-container.w3-border.w3-padding-16
+                if(elem.criador == user.email)
+                  a(href="http://localhost:3005/pubs/delete/" + elem._id)
+                    button.w3-button.w3-light-grey Delete Post
+                - var time = elem.dataCriacao.split(' ')[0] + ' at ' + elem.dataCriacao.split(' ')[1]
+                p
+                  b= 'Posted at ' + time
+                p= 'Created by ' + elem.criador
+                a(href="http://localhost:3005/remove/" + elem.criador)
+                  button.w3-button.w3-blue-grey Remove friend
+                p
+                  b Classifier
+                a(href="http://localhost:3005/pubs/classifier/" + elem.classificador)
+                    button.w3-button.w3-light-grey= elem.classificador
+                #user
+                  if elem.tipo == "Event"
+                    - var time2 = elem.dataRealizar.split(' ')[0] + ' at ' + elem.dataRealizar.split(' ')[1]
+                    p
+                      b=elem.titulo
+                    p= 'Will occur at ' + time2 
+                  p=elem.texto
+                .w3-container.w3-light-grey
+                  p
+                    b Files Avaliables
+                  #user
+                    if elem.ficheiros.length > 0
+                      each elem2 in elem.ficheiros
+                        a(href="http://localhost:3005/file/" + elem2.filename)
+                          button.w3-button.w3-blue-grey= elem2.name
+                    else
+                      p There's no files uploaded
+                .w3-container.w3-light-grey
+                  p 
+                    b Comments
+                  #user
+                    if elem.comentarios.length > 0
+                      each elem2 in elem.comentarios
+                        p= elem2.criador + ' : ' + elem2.texto
+                    else
+                      p No comments for now
+                  form.w3-container(action="/pubs/comment/" + elem._id method="post")
+                    label Text:
+                    input.w3-input(type="text" name="texto")
+                    input.w3-input(type="submit" value="Comment")
+      td
+        .w3-container.w3-blue-grey.w3-padding-16
+          h1 
+            b Profile
+          p= 'Name:' + user.nome
+          p= 'University:' + user.universidade
+          p= 'Year:' + user.ano
+          p= 'Degree:' + user.curso
+          h1
+            b Friends
+          each elem in friends
+            table.w3-table
+              tr.w3-blue-grey.w3-border-blue-grey
+                td
+                  a(href="http://localhost:3005/profile/" + elem.email)
+                    button.w3-button.w3-light-gray=elem.nome
+                td
+                  #user
+                    if( user.amigos.indexOf(elem.email) > -1 )
+                      a(href="http://localhost:3005/remove/" + elem.email)
+                        button.w3-button.w3-light-grey Remove friend
+                    else
+                      a(href="http://localhost:3005/add/" + elem.email)
+                        button.w3-button.w3-light-grey Add friend 
+        .w3-container.w3-padding
+          a(href="http://localhost:3005/logout")
+            button.w3-button.w3-blue-grey Logout  
+        .w3-container.w3-border.w3-light-grey
+          h2
+            b Classifiers
+          table.w3-table-all.w3-border-0
+            each elem in clas
+              tr.w3-light-grey
+                td 
+                  a(href="http://localhost:3005/pubs/classifier/" + elem)
+                    button.w3-button.w3-blue-gray= elem
+        
+          
+

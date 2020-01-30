@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .w3-container.w3-blue-grey
+    h1
+      b
+        i 
+          a(href="http://localhost:3005/linkedsharing/")
+            button.w3-button.w3-blue-grey Linked Sharing
+  .w3-container.w3-blue-grey
+    p If you have an account, just submit your Email and Password here
+    form.w3-container(action="/linkedsharing" method="post")
+      label Email:
+      input.w3-input(type="text" name="email")
+      label Password:
+      input.w3-input(type="password" name="password")
+      input.w3-input.w3-light-grey(type="submit" value="Login")
+  .w3-container.w3-blue-grey.w3-padding
+    p If you don't have an account here, click in Register
+    a(href="http://localhost:3005/register/")
+      button.w3-button.w3-light-grey Register
+    

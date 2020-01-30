@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/home/xekster/PRI/aula4/PRI2019-A78914-T3/PR.dtd">
+<pr>
+    <meta>
+        <keyname>PRI e PLC 2019::trabalho</keyname>
+        <title>Trabalho de Processamento de Linguagens e Conhecimento, e Processamento e Representação de Informação</title>
+        <bdate>30-01-2020</bdate>
+        <edate>30-01-2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www.di.uminho.pt/~jcr</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>a78914</identifier>
+            <name>Ricardo Rodrigues Martins</name>
+            <email>a78914@alunos.uminho.pt</email>
+            <photo path="ricardo.jpg"/>
+        </member>
+        <member>
+            <identifier>a80424</identifier>
+            <name>José Pedro Saraiva de Carvalho</name>
+            <email>a80424@alunos.uminho.pt</email>
+            <photo path="jose.jpg"/>
+        </member>
+        <member>
+            <identifier>a82324</identifier>
+            <name>Carlos Miguel Lopes Sá Barbosa</name>
+            <email>a82324@alunos.uminho.pt</email>
+            <photo path="carlos.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>
+            Este trabalho está dividido em três diretorias principais, sendo que cada uma contém uma parte da aplicação. A diretoria <b>LikedSharing</b> contém o servidor de API da aplicação, e a
+            diretoria <b>LinkedSharing_Interface</b> contém o servidor de interface. Em cada uma destas duas diretorias é necessário executar o comando <i>npm i</i> e o comando <i>npm start</i> de
+            modo a instalar os módulos necessários e a iniciar o servidor. Este pode ser acedido no browser através do link <i>localhost:3005</i>.
+        </p>
+        <p>
+            A terceria diretoria, <b>mongo_import</b>, não interfere no funcionamento do programa, e apenas contém a gramática utilizada para o processamento do registo de um utilizador através de um ficheiro.
+            Este gramática serviu para gerar um arquivo <i>.jar</i> que é executado pelo servidor para o registo do utilizador.
+        </p>
+    </abstract>
+    <deliverables>
+        <deliverable path="PR.xml">PR.xml</deliverable>
+        <deliverable path="LinkedSharing/">Servidor API da aplicação</deliverable>
+        <deliverable path="LinkedSharing_Interface">Servidor de interface da aplicação</deliverable>
+        <deliverable path="mongo_import/">Gramática para o registo de utilizador</deliverable>
+    </deliverables>
+</pr>
